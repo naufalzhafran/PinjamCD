@@ -21,11 +21,13 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
-);
+);$app->routeMiddleware([
+    'login' => App\Http\Middleware\LoginMiddleware::class,
+]);
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +74,10 @@ $app->configure('app');
 |
 */
 
+$app->routeMiddleware([
+    'login' => App\Http\Middleware\LoginMiddleware::class,
+]);
+
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
@@ -91,8 +97,8 @@ $app->configure('app');
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*
