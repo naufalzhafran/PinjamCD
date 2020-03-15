@@ -20,7 +20,7 @@ class TableRents extends Migration
             $table->unsignedBigInteger('cd_id');
             $table->foreign('cd_id')->references('id')->on('cds');
             $table->date('borrow_date');
-            $table->date('return_date');
+            $table->date('return_date')->nullable();
         });
     }
 
