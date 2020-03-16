@@ -12,6 +12,7 @@ class CD extends Model
      *
      * @var array
      */
+    protected $table = 'cds';
     protected $fillable = [
         'title', 'rate', 'category', 'quantity'
     ];

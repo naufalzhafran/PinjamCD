@@ -17,3 +17,11 @@ $router->get('/', function () use ($router) {
 
 $router->post("/register", "AuthController@register");
 $router->post("/login", "AuthController@login");
+
+$router->group(['prefix'=>'api/'], function() use($router){
+    $router->get('/cds', 'CDController@index');
+    $router->post('/cd', 'CDController@create');
+    $router->get('/cd/{id}', 'CDController@show');
+    $router->put('/cd/{id}', 'CDController@update');
+    $router->delete('/cd/{id}', 'CDController@destroy');
+    });

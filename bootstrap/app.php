@@ -78,6 +78,10 @@ $app->routeMiddleware([
     'login' => App\Http\Middleware\LoginMiddleware::class,
 ]);
 
+$app->routeMiddleware([
+    'adminLogin' => App\Http\Middleware\AdminLoginMiddleware::class,
+]);
+
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
