@@ -22,6 +22,7 @@ class LoginMiddleware
             if (!$check) {
                 return response('Token Tidak Valid.', 401);
             } else {
+                $request->user_id = $check->id;
                 return $next($request);
             }
         } else {

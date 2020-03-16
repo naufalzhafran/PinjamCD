@@ -12,9 +12,15 @@ class Rent extends Model
      *
      * @var array
      */
+    protected $table = 'rents';
     protected $fillable = [
         'user_id', 'cd_id','borrow_date','return_date'
     ];
 
+    protected $dates = [
+        'borrow_date','return_date'
+    ];
+
+    public $timestamps = false;
 
 }
